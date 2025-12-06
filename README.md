@@ -76,8 +76,6 @@ Preprocessamento
     ↓ - Resolução de duplicatas
     ↓ - Reamostragem mensal
     ↓
-Divisão Treino/Teste (índice 23)
-    ↓
 Grid Search (SARIMA e Prophet)
     ↓
 Seleção de Melhores Modelos (baseado em RMSE)
@@ -214,12 +212,6 @@ IC-Gasto-Fotovoltaico/
 3. **Reamostragem**: Converte dados irregulares para frequência mensal (MS - Month Start)
 4. **Filtro temporal**: Remove dados após 2025-01-01
 
-### Divisão Treino/Teste
-
-- **Ponto de corte**: Índice 23 do dataset (consistente em todos os modelos)
-- **Treino**: Primeiros 23 meses
-- **Teste**: Restante da série (`half = data.iloc[23:]`)
-
 ### Features para Ensemble
 
 Os métodos ensemble (Bagging, Random Forest) utilizam:
@@ -236,57 +228,3 @@ Algumas instalações têm períodos com consumo zero, o que afeta:
 - **Prophet**: Requer valores positivos → remove zeros antes do fit
 
 **Solução**: RMSE como métrica principal + preprocessamento específico para Prophet
-
-## 📊 Insights da Pesquisa
-
-### Descobertas Principais
-
-1. **Ensemble supera modelos individuais**: Em 60% das instalações, métodos ensemble apresentaram melhor performance
-2. **RMSE vs MAPE**: Instalações com consumos zero invalidam MAPE como métrica confiável
-3. **Weighted Voting é robusto**: Combina simplicidade com bom desempenho
-4. **Random Forest captura não-linearidades**: Melhor para instalações com padrões complexos
-
-### Recomendações por Perfil
-
-| Perfil da Instalação | Método Recomendado | Justificativa |
-|---------------------|-------------------|---------------|
-| Consumo estável e alto | SARIMA | Padrões lineares bem definidos |
-| Consumo variável | Random Forest | Captura variações não-lineares |
-| Consumo com zeros | Weighted Voting | Robusto a valores extremos |
-| Dados limitados | Simple Voting | Simples e generaliza bem |
-
-## 🤝 Contribuindo
-
-Este é um projeto de pesquisa acadêmica. Sugestões e melhorias são bem-vindas:
-
-1. Fork o repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/NovaAnalise`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova análise X'`)
-4. Push para a branch (`git push origin feature/NovaAnalise`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto é desenvolvido para fins acadêmicos e de pesquisa.
-
-## 👥 Autores
-
-Projeto desenvolvido como parte do Trabalho de Conclusão de Curso (TCC) / Iniciação Científica (IC).
-
-## 📚 Referências
-
-- Box, G. E. P., & Jenkins, G. M. (1976). Time Series Analysis: Forecasting and Control
-- Taylor, S. J., & Letham, B. (2018). Forecasting at Scale. The American Statistician
-- Hyndman, R. J., & Athanasopoulos, G. (2021). Forecasting: Principles and Practice
-
-## 🔍 Trabalhos Futuros
-
-- [ ] Incorporar variáveis exógenas (temperatura, irradiância solar)
-- [ ] Testar modelos de deep learning (LSTM, Transformer)
-- [ ] Expandir análise para mais instalações
-- [ ] Implementar previsão em tempo real
-- [ ] Desenvolver dashboard interativo para visualização
-
----
-
-**Última atualização**: Dezembro 2024
