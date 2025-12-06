@@ -1,0 +1,110 @@
+# ============================================================================
+# Gitignore for IC-Gasto-Fotovoltaico Project
+# ============================================================================
+
+# Claude Code specific files
+CLAUDE.md
+.claude/
+
+# Data files
+*.xlsx
+*.csv
+*.xls
+
+# Keep only code structure, exclude data
+Controle_Faturamento_2023.xlsx
+_SELECT_cb_Name_cb_Installation_fc_ForecastConsumeValue_fc_Refer_202504140945.csv
+**/sarima_results_*.csv
+**/prophet_results_*.csv
+**/ensemble_results.csv
+**/best_*.csv
+**/model_comparison.csv
+**/detailed_ensemble_analysis.csv
+**/ensemble_pivot_table.csv
+**/latex_*.csv
+
+# Generated outputs and visualizations
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+
+# Model files
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.json
+model.json
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Windows specific
+*.lnk
+*:Zone.Identifier
+**/*:Zone.Identifier
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+
+# Documentation build outputs
+docs/_build/
+site/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Keep README and documentation
+!README.md
+!LICENSE
+!requirements.txt
+
+# Keep specific example result files (if needed for documentation)
+# Uncomment if you want to keep example outputs
+# !Analise/example_results.csv
+# !Ensemble/example_visualization.png
