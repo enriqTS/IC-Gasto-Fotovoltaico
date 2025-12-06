@@ -94,7 +94,6 @@ Resultados Finais + Visualizações
 | **RMSE** | Raiz do Erro Quadrático Médio | **Métrica principal** - robusta para valores zero |
 | **MAE** | Erro Absoluto Médio | Interpretação direta em kWh |
 | **MAPE** | Erro Percentual Absoluto Médio | Problemático com consumos zero |
-| **WMAPE** | MAPE Ponderado | MAPE com pesos por amostra |
 
 **⚠️ Importante**: MAPE pode ser infinito quando há consumos zero. Por isso, **RMSE é a métrica primária** para seleção de modelos.
 
